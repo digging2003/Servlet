@@ -151,7 +151,7 @@ article{
 				<% for(Map<String, Object> i : musicList) { %>
 					<tr>
 						<td class="text-center"><%= i.get("id") %></td>
-						<td class="text-center"><a class="text-decoration-none" href="/jsp/test/test10.jsp?title=<%= i.get("title") %>"><%= i.get("title") %></a></td>
+						<td class="text-center"><a class="text-decoration-none" href="/jsp/test/test10.jsp?id=<%= i.get("id") %>"><%= i.get("title") %></a></td>
 						<td class="text-center"><%= i.get("album") %></td>
 					</tr>
 				<% } %>

@@ -79,14 +79,21 @@
 %>
 
 	<div class="container d-flex">
-		<img width=250 src=<%= image %>>
+		<div>
+			<img width=250 src=<%= image %>>
+		</div>
 		<div class="mx-2">
-			<div class="display-2"><b><%= title %></b></div>
+			<div class="display-2 fw-bold"><b><%= title %></b></div>
 			<div class="display-4 text-info"><%= author %></div>
 			<div class="display-5 text-secondary"><%= publisher %></div>
 		</div>
 	
 	</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4I2p+R3u8o7h3VZo6xZdV2ANFFarTtqA8O+o6n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-q8i4mM11Z3Aq2pl3X2OB3R6czEer5eH9UQm5F8RxzVt71SH1A5cgk+Hv2ysY2xw0" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0d7J2wBFFXf3t4gxfJbVrC5ENm0EzdJl6V6ZHyvBPC9s3QsA" crossorigin="anonymous"></script>
+
 
 </body>
 </html>

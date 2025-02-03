@@ -12,6 +12,10 @@
 <body>
 
 <%
+
+	String category = request.getParameter("category");
+
+
     List<Map<String, String>> list = new ArrayList<>();
     Map<String, String> map = new HashMap<String, String>() {{ put("ch", "5"); put("name", "SBS"); put("category", "지상파"); } };
     list.add(map);
@@ -49,42 +53,47 @@
     list.add(map);
     map = new HashMap<String, String>() {{ put("ch", "121"); put("name", "KBSN 스포츠"); put("category", "스포츠"); } };
     list.add(map);
+    
+    
 %>
 
 	<div class="container">
-		<div class="d-flex justify-content-center">
+		<header class="d-flex justify-content-center">
 			<h1 class="text-danger my-4">Sk broadband IPTV</h1>
-		</div>
+		</header>
 		<nav>
-			<ul class="nav d-flex justify-content-around bg-danger">
-				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09.jsp"">전체</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09-2.jsp?category=1">지상파</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09-2.jsp?category=2">드라마</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09-2.jsp?category=3">예능</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09-2.jsp?category=4">영화</a></li>
-				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09-2.jsp?category=5">스포츠</a></li>
+			<ul class="nav nav-fill bg-danger">
+				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09.jsp">전체</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09.jsp?category=지상파">지상파</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09.jsp?category=드라마">드라마</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09.jsp?category=예능">예능</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09.jsp?category=영화">영화</a></li>
+				<li class="nav-item"><a class="nav-link text-white" href="/jsp/test/test09.jsp?category=스포츠">스포츠</a></li>
 			</ul>
 		</nav>
-		<div>
-			<table class="table align-middle">
+		<body>
+			<table class="table text-center">
 				<thead>
 					<tr>
-						<th class="text-center">채널</td>
-						<th class="text-center">채널명</td>
-						<th class="text-center">카테고리</td>
+						<th>채널</td>
+						<th>채널명</td>
+						<th>카테고리</td>
 					</tr>
 				</thead>
 				<tbody>
-				<% for(Map<String, String> i : list) { %>
+				<% for(Map<String, String> i : list) {
+						if(i.get("category").equals(category) || category == null) {
+						%>
 					<tr>
-						<td class="text-center"><%= i.get("ch") %></td>
-						<td class="text-center"><%= i.get("name") %></td>
-						<td class="text-center"><%= i.get("category") %></td>
+						<td><%= i.get("ch") %></td>
+						<td><%= i.get("name") %></td>
+						<td><%= i.get("category") %></td>
 					</tr>
-				<% } %>
+				<% 		}
+					} %>
 				</tbody>
 			</table>
-		</div>
+		</body>
 		
 		<footer class="d-flex justify-content-center">
 			<div class="small">Copyright 2021. marondal All Rights Reserved.</div>

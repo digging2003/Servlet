@@ -23,7 +23,6 @@ article{
 <%
 // 아티스트 정보 
 
-	String title = request.getParameter("title");
 
     Map<String, Object> artistInfo = new HashMap<>();
     artistInfo.put("name", "아이유");
@@ -103,8 +102,14 @@ article{
     
     Map<String, Object> searchMusic = new HashMap<>();
     
+
+	String title = request.getParameter("title"); 
+	String id = request.getParameter("id");
+    
     for(Map<String, Object> i : musicList) {
-    	if(i.get("title").equals(title)){
+    	if(title != null && i.get("title").equals(title)){
+    		searchMusic = i;
+    	} else if (i.get("id").toString().equals(id)) {
     		searchMusic = i;
     	}
     }
