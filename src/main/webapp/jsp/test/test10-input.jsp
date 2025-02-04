@@ -107,7 +107,7 @@ article{
 				
 				<form class="input-group w-50" method="post" action="/jsp/test/test10.jsp">
 					<input type="text" class="form-control" name="title">
-					<button type="submit" class="btn btn-info text-white">검색</button>
+					<button type="submit" class="btn btn-success text-white">검색</button>
 				</form>
 			</div>
 		
